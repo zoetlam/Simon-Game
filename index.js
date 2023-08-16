@@ -38,6 +38,7 @@ document.addEventListener('keypress',function(event){
     playGame();
     play = true;
     $('body').removeClass('game-over');
+    $('#start').addClass('invisible');
   }
 });
 document.querySelector('#start').addEventListener('click', function(){

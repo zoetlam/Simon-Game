@@ -2,7 +2,7 @@
 Build an electronic, colorful memory game
 
 Simon is an electronic memory game that challenges players to repeat a sequence of colors and sounds played by the game.
-The game consists of four colored buttons: red, blue, green, and yellow. Each button produces a unique sound when pressed.
+The game consists of four colored buttons: **red**, **blue**, **green**, and **yellow**. Each button produces a unique sound when pressed.
 
 The game begins with an initial sequence of colors and sounds played by the game. For example, Simon might play the sequence: red, blue, green.
 

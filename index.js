@@ -1,4 +1,3 @@
-let arr = document.querySelectorAll('.btn');
 let idArr = ['green', 'red', 'yellow','blue'];
 
 let userClick = [];
@@ -41,6 +40,11 @@ document.addEventListener('keypress',function(event){
     $('body').removeClass('game-over');
   }
 });
+document.querySelector('#start').addEventListener('click', function(){
+    playGame();
+    $('body').removeClass('game-over');
+    $('#start').addClass('invisible');
+})
 
 $('.btn').click(function() {
   userClick.push(this.id);
@@ -51,6 +55,7 @@ $('.btn').click(function() {
       playSound('wrong');
       document.querySelector('#level-title').innerHTML = 'Game Over <br> Press any key to play again';
       $('body').addClass('game-over');
+      $('#start').removeClass('invisible');
       startOver();
     } else{
       buttonAnimation(this.id);

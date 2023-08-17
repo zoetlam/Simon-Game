@@ -6,7 +6,6 @@ let userClick = [];
 //--- create a random 4 values
 const randomFour = ()=> Math.floor(Math.random() * 4); //create random from 0 to 3
 let randomStorage = [];
-let thi = [];
 
 // play sound and animation base on button
 function playSound(keyNote){
@@ -29,12 +28,13 @@ function addNext(){
   randomStorage.push(idArr[num]);
   let a = randomStorage[randomStorage.length - 1];
   buttonAnimation(a);
-  // console.log('de: ' + randomStorage);
+  console.log('de: ' + randomStorage);
 }
 
 let play = false;
 document.addEventListener('keypress',function(event){
   if (!play){
+    
     playGame();
     play = true;
     $('body').removeClass('game-over');
@@ -49,41 +49,44 @@ document.querySelector('#start').addEventListener('click', function(){
 
 $('.btn').click(function() {
   userClick.push(this.id);
-  for (let i = 0; i < userClick.length; i++){
-    // console.log('click: ' + userClick);
-    
-    if (userClick[i] !== randomStorage[i]){
-      playSound('wrong');
-      document.querySelector('#level-title').innerHTML = 'Game Over <br> Press any key to play again';
-      $('body').addClass('game-over');
-      $('#start').removeClass('invisible');
-      startOver();
-    } else{
-      buttonAnimation(this.id);
-      if(userClick.length == randomStorage.length && userClick[userClick.length - 1] == randomStorage[randomStorage.length - 1]){
-        playGame();
-      } else{
-        level = level;
-      }
+  buttonAnimation(this.id);
+  console.log('click: ' + userClick);
+
+  if(userClick[userClick.length - 1] === randomStorage[userClick.length - 1]){
+    if(userClick.length === randomStorage.length && userClick[userClick.length - 1] == randomStorage[randomStorage.length - 1]){
+    setTimeout(function(){
+      playGame();
+    },1000);
+        
     }
+  } else{
+      gameOver();
+      startOver();
   }
 });
 
 let level = 0;
 function playGame(){
-  level++;
-  setTimeout(function(){
-    addNext();
-  },1000);
-  document.querySelector('#level-title').innerHTML = 'Level ' + level;
   userClick = [];
+  level++;
+  if (level == 1){
+    $('body').removeClass('game-over');
+    $('#start').addClass('invisible');
+  }
+  addNext();
+  document.querySelector('#level-title').innerHTML = 'Level ' + level;
 }
 
 function startOver() {
-  level = 0
+  level = 0;
   randomStorage = [];
-  userClick = [];
   play = false;
+}
+function gameOver(){
+  playSound('wrong');
+  document.querySelector('#level-title').innerHTML = 'Game Over <br> Press any key to play again';
+  $('body').addClass('game-over');
+  $('#start').removeClass('invisible');
 }
 
 

@@ -1,5 +1,5 @@
 # Simon-Game
-Build an electronic, colorful memory game
+Using Vanilla Javascript
 
 Simon is an electronic memory game that challenges players to repeat a sequence of colors and sounds played by the game.
 The game consists of four colored buttons: **red**, **blue**, **green**, and **yellow**. Each button produces a unique sound when pressed.

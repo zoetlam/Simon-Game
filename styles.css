@@ -22,19 +22,19 @@ body {
 
 /* Style for the popup box */
 .popup {
-  padding: 50px;
   font-size: 1.5rem;
   display: none; /* Hide the popup initially */
-  position: fixed; /* Position the popup */
-  top: 50%; /* Center the popup vertically */
-  left: 50%; /* Center the popup horizontally */
+  position: fixed;
+  top: 50%;
+  left: 50%;
   transform: translate(-50%, -50%); /* Use transform to center the popup precisely */
-  background-color: #f9f9f9; /* Set the background color */
-  padding: 20px; /* Add some padding */
-  border: 1px solid #ccc; /* Add a border */
-  border-radius: 10px; /* Add rounded corners */
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); /* Add a shadow */
-  z-index: 9999; /* Set a high z-index to make sure the popup appears on top of other elements */
+  background-color: #f9f9f9;
+  padding: 50px;
+  padding-top: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  z-index: 9999; 
   text-align: left;
   font-family: 'Handjet', cursive;
   line-height: 1;
@@ -44,11 +44,6 @@ body {
   color: red;
 }
 
-.popup-container{
-  width: 85%;
-  margin: 0 auto;
-}
-
 /* Style for the rock button */
 .popup-btn {
   font-family: 'Handjet', cursive;
@@ -56,11 +51,11 @@ body {
   margin: 0 auto;
   padding: 10px 20px;
   font-size: 18px;
-  background-color: navy; /* Set the background color */
-  color: #fff; /* Set the text color */
-  border: none; /* Remove the border */
-  border-radius: 5px; /* Add rounded corners */
-  cursor: pointer; /* Add a pointer cursor on hover */
+  background-color: navy; 
+  color: #fff; 
+  border: none;
+  border-radius: 5px;
+  cursor: pointer; 
 }
 
 .container {
@@ -140,8 +135,7 @@ body {
   }
   .popup{
     font-size: 1rem;
+    padding: 10px;
   }
-  .popup-container{
-    width: 100%;
-  }
+  
 }

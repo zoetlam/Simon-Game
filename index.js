@@ -3,14 +3,10 @@ let idArr = ['green', 'red', 'yellow','blue'];
 let userClick = [];
 
 //------Dialog box-----Game Rule--------
-
 document.getElementById("popup").style.display = "block";
-
-
 function hidePopup() {
   document.getElementById("popup").style.display = "none";
 }
-
 
 //--- create a random 4 values
 const randomFour = ()=> Math.floor(Math.random() * 4); //create random from 0 to 3

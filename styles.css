@@ -5,15 +5,16 @@
 font-family: 'Handjet', cursive;
 font-family: 'Press Start 2P', cursive;
 */
-
-body {
+.center{
   text-align: center;
+}
+body {
   background-color: #011F3F;
+  font-family: 'Press Start 2P', cursive;
 }
 
 #level-title {
-  font-family: 'Press Start 2P', cursive;
-  font-size: 3rem;
+  font-size: 2.5rem;
   margin:  2.5%;
   color: #FEF2BF;
   line-height: 70px;
@@ -40,17 +41,16 @@ body {
   line-height: 1;
 }
 .popup h1{
-  text-align: center;
   color: red;
 }
 
-/* Style for the rock button */
+/* Style for "let's rock" button */
 .popup-btn {
   font-family: 'Handjet', cursive;
   display: block;
-  margin: 0 auto;
+  margin: 10px auto 0;
   padding: 10px 20px;
-  font-size: 18px;
+  font-size: 1.5rem;
   background-color: navy; 
   color: #fff; 
   border: none;
@@ -74,13 +74,13 @@ body {
 }
 
 #start{
+  font-family: 'Press Start 2P', cursive;
   margin-top: 30px;
   border-radius: 10px;
   display: inline-block;
   height: 40px;
   width: 100px;
   font-size: 0.8rem;
-  font-family: 'Press Start 2P', cursive;
 }
 
 .game-over {
@@ -112,6 +112,12 @@ body {
   visibility: hidden;
 }
 
+#footer{
+  color: #FEF2BF;
+  font-size: 0.5rem;
+  opacity: 50%;
+}
+
 @media screen and (max-width: 800px) {
   #level-title {
     font-size: 1.5rem;
@@ -131,7 +137,7 @@ body {
     font-size: 1rem;
     padding: 10px;
   }
-  
+
   .popup li{
     margin-left: -20px;
   }

@@ -8,19 +8,17 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 
-<body>
+<body class="center">
   <h1 id="level-title">Press A Key to Start <br/> or Click the button below</h1>
   <!-- The popup box -->
   <div id="popup" class="popup">
-      <h1>Welcome to Simon Game</h1>
-      <p>The rules are simple:</p>
+      <h1 class="center">Welcome to Simon Game</h1>
       <ul>
-          <li>The game will start with one color.</li>
+          <li>In each level Game will add 1 color to the sequence.</li>
           <li>You need to click or tap on the color to repeat the sequence.</li>
-          <li>After each successful round, the game will add one more color to the sequence.</li>
-          <li>If you make a mistake, the game will end.</li>
+          <li>If you make a mistake, game will end.</li>
       </ul>
-      <p>Let's challenge our brain and have fun playing the Simon Color Game!</p>
+      <p class="center">Let's challenge our brain and have fun!</p>
       
       <button class="popup-btn" onclick="hidePopup()">Let's Rock!</button>
   </div>
@@ -50,8 +48,10 @@
   </div>
   <button id="start">Start</button>
 
-  
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <p id="footer">Simon Game</p>
+  <!-- Develop by zoetlam -->
+  <!-- https://github.com/zoetlam/Simon-Game -->
+
   <script src="index.js" charset="utf-8"></script>
 </body>
 

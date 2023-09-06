@@ -6,7 +6,12 @@ let userClick = [];
 document.getElementById("popup").style.display = "block";
 function hidePopup() {
   document.getElementById("popup").style.display = "none";
+  document.querySelector('#start').classList.remove('invisible');
 }
+if(document.getElementById("popup").style.display = "block"){
+  document.querySelector('#start').classList.add('invisible');
+}
+
 
 //--- create a random 4 values
 const randomFour = ()=> Math.floor(Math.random() * 4); //create random from 0 to 3
@@ -33,7 +38,7 @@ function addNext(){
   randomStorage.push(idArr[num]);
   let a = randomStorage[randomStorage.length - 1];
   buttonAnimation(a);
-  console.log('de: ' + randomStorage);
+  // console.log('de: ' + randomStorage);
 }
 
 let play = false;
@@ -47,22 +52,24 @@ document.querySelector('#start').addEventListener('click', function(){
     playGame();
 })
 
-$('.btn').click(function() {
-  userClick.push(this.id);
-  buttonAnimation(this.id);
-  console.log('click: ' + userClick);
+//Game rules
+document.querySelectorAll('.btn').forEach(function(button) {
+  button.addEventListener('click', function() {
+    userClick.push(this.id);
+    buttonAnimation(this.id);
+    // console.log('click: ' + userClick);
 
-  if(userClick[userClick.length - 1] === randomStorage[userClick.length - 1]){
-    if(userClick.length === randomStorage.length && userClick[userClick.length - 1] == randomStorage[randomStorage.length - 1]){
-    setTimeout(function(){
-      playGame();
-    },1000);
-        
-    }
-  } else{
+    if (userClick[userClick.length - 1] === randomStorage[userClick.length - 1]) {
+      if (userClick.length === randomStorage.length && userClick[userClick.length - 1] == randomStorage[randomStorage.length - 1]) {
+        setTimeout(function() {
+          playGame();
+        }, 1000);
+      }
+    } else {
       gameOver();
       startOver();
-  }
+    }
+  });
 });
 
 let level = 0;
@@ -70,8 +77,8 @@ function playGame(){
   userClick = [];
   level++;
   if (level == 1){
-    $('body').removeClass('game-over');
-    $('#start').addClass('invisible');
+    document.querySelector('body').classList.remove('game-over');
+    document.querySelector('#start').classList.add('invisible');
   }
   addNext();
   document.querySelector('#level-title').innerHTML = 'Level ' + level;
@@ -85,8 +92,8 @@ function startOver() {
 function gameOver(){
   playSound('wrong');
   document.querySelector('#level-title').innerHTML = 'Game Over <br> Press any key to play again';
-  $('body').addClass('game-over');
-  $('#start').removeClass('invisible');
+  document.querySelector('body').classList.add('game-over');
+  document.querySelector('#start').classList.remove('invisible');
 }
 
 
